@@ -26,7 +26,10 @@
                 android:layout_height="100dp"
                 android:id="@+id/topLeft"
                 android:background="@android:color/transparent"
-                android:textSize="85dp" />
+                android:textSize="85sp"
+                android:nestedScrollingEnabled="false"
+                android:onClick="onClick"
+                android:clickable="true" />
 
             <View
                 android:layout_width="2dp"
@@ -38,7 +41,9 @@
                 android:layout_height="100dp"
                 android:id="@+id/top"
                 android:background="@android:color/transparent"
-                android:textSize="85dp" />
+                android:textSize="85sp"
+                android:onClick="onClick"
+                android:clickable="true" />
 
             <View
                 android:layout_width="2dp"
@@ -50,7 +55,9 @@
                 android:layout_height="100dp"
                 android:id="@+id/topRight"
                 android:background="@android:color/transparent"
-                android:textSize="85dp" />
+                android:textSize="85sp"
+                android:onClick="onClick"
+                android:clickable="true" />
         </LinearLayout>
 
         <View
@@ -68,7 +75,9 @@
                 android:layout_height="100dp"
                 android:id="@+id/left"
                 android:background="@android:color/transparent"
-                android:textSize="85dp" />
+                android:textSize="85sp"
+                android:onClick="onClick"
+                android:clickable="true" />
 
             <View
                 android:layout_width="2dp"
@@ -80,7 +89,9 @@
                 android:layout_height="100dp"
                 android:id="@+id/mid"
                 android:background="@android:color/transparent"
-                android:textSize="85dp" />
+                android:textSize="85sp"
+                android:onClick="onClick"
+                android:clickable="true" />
 
             <View
                 android:layout_width="2dp"
@@ -92,7 +103,9 @@
                 android:layout_height="100dp"
                 android:id="@+id/right"
                 android:background="@android:color/transparent"
-                android:textSize="85dp" />
+                android:textSize="85sp"
+                android:onClick="onClick"
+                android:clickable="true" />
         </LinearLayout>
 
         <View
@@ -111,7 +124,9 @@
                 android:id="@+id/botLeft"
                 android:background="@android:color/transparent"
                 android:textColor="@android:color/black"
-                android:textSize="85dp" />
+                android:textSize="85sp"
+                android:onClick="onClick"
+                android:clickable="true" />
 
             <View
                 android:layout_width="2dp"
@@ -123,7 +138,9 @@
                 android:layout_height="100dp"
                 android:id="@+id/bot"
                 android:background="@android:color/transparent"
-                android:textSize="85dp" />
+                android:textSize="85sp"
+                android:onClick="onClick"
+                android:clickable="true" />
 
             <View
                 android:layout_width="2dp"
@@ -135,7 +152,9 @@
                 android:layout_height="100dp"
                 android:id="@+id/botRight"
                 android:background="@android:color/transparent"
-                android:textSize="85dp" />
+                android:textSize="85sp"
+                android:onClick="onClick"
+                android:clickable="true" />
         </LinearLayout>
     </LinearLayout>
 
@@ -146,23 +165,32 @@
         android:background="@drawable/restart"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="onClick"
+        android:clickable="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:text=""
+        android:id="@+id/currentPlayer"
+        android:layout_alignTop="@+id/newGame"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:textColor="#ff000000"
+        android:textSize="50sp"
+        android:layout_alignParentStart="false" />
+
+    <TextView
+        android:layout_width="270dp"
+        android:layout_height="80dp"
         android:id="@+id/victoryMessage"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/currentPlayer"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textSize="50dp" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ff351bff"
+        android:text="Click on New Game to play"
+        android:textSize="30dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -171,5 +199,17 @@
         android:id="@+id/newGame"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:clickable="true"
+        android:onClick="onClick" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Currently Playing:"
+        android:id="@+id/assistMessage"
+        android:layout_toStartOf="@+id/currentPlayer"
+        android:layout_alignBottom="@+id/newGame"
+        android:layout_toLeftOf="@+id/currentPlayer" />
 </RelativeLayout>
